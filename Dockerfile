@@ -66,4 +66,4 @@ RUN mkdir -p /data && chown -R node:node /data && chmod -R 755 /data
 USER node
 
 # Start gateway server
-CMD ["sh", "-c", "node openclaw.mjs gateway --allow-unconfigured --bind 0.0.0.0 --port $PORT"]
+CMD ["sh", "-c", "node openclaw.mjs gateway --allow-unconfigured --bind lan --auth token --token $OPENCLAW_GATEWAY_TOKEN --port $PORT"]
